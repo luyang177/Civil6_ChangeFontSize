@@ -1,9 +1,9 @@
 object Civil6ChangeFontSize {
   def main(args: Array[String]): Unit = {
-    changeFontSize("F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization VI\\Base\\Assets\\UI\\Fonts\\Civ6_FontStyles_zh_Hans_CN.xml", 4)
+    changeFontSize("F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization VI\\Base\\Assets\\UI\\Fonts\\Civ6_FontStyles_zh_Hans_CN.xml")(4)
   }
 
-  def changeFontSize(path: String, fontSizeOffset: Int): Unit = {
+  def changeFontSize(path: String)(fontSizeOffset: Int): Unit = {
     val fileLines = scala.io.Source.fromFile(path).getLines.toList
 
     val newLines = fileLines.map(o => {
